@@ -1,0 +1,17 @@
+<div class="card shadow text-center conf">
+    <div class="card-body">
+        <h5 class="card-title">{{project.name}}</h5>
+        <p class="card-text">{{project.summary}}</p>
+        <p-button (onClick)="showDialog()" label="View more"/>
+    </div>
+    <div class="card-footer">
+        <div class="d-flex flex-wrap justify-content-center">
+            <div *ngFor="let tag of project.tags">
+                <img type="image" src="{{tag}}" alt="" width="32" height="32">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-project-modal [project]="project" [(visible)]="visible"></app-project-modal>

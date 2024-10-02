@@ -1,0 +1,18 @@
+<div class="card flex justify-content-center">
+    <p-dialog 
+        header="{{project.name}}" 
+        [modal]="true" 
+        [(visible)]="visible" 
+        (onHide)="toggleVisible()"
+        [style]="{ width: '50rem'}" 
+        [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" 
+        [maximizable]="true">
+        <carousel>
+            <slide *ngFor="let slide of slides">
+                <img src="{{slide.content}}" class="imgDisplay" width="650px" height="600px">
+            </slide>
+        </carousel>
+        <br>
+        <p>{{project.description}}</p>
+    </p-dialog>
+</div>
