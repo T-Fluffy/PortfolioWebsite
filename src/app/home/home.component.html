@@ -17,6 +17,13 @@
                 <h2>Featured Projects</h2>
                 <h4>{{featuredProjects.name}}</h4>
             </div>
+            <carousel>
+                <slide *ngFor="let slide of featuredProjects.pictures">
+                    <img src="{{slide}}" class="imgDisplay" width="550px" height="400px">
+                </slide>
+            </carousel>
+            <p class="mt-2">{{featuredProjects.summary}}</p>
+            <p>Check the portfolio section to learn more !</p>
         </div>
     </div>
 </div>

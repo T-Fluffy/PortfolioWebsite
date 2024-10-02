@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Project } from '../models/Project';
 import { Tag } from '../models/Tag';
+import { filter } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,27 +11,30 @@ export class ProjectsService {
   projects: Project[] = [
     {
       id: 0,
-      name: 'Angular Project',
+      name: 'Angular Portfolio',
       summary: 'Sample Angular Project',
       description: 'description for the project',
       urlLink: 'some link ',
-      tags: [Tag.ANGULAR],
+      pictures: ['assets/Projects_Pictures/project1/img1.png', 'assets/Projects_Pictures/project1/img2.png'],
+      tags: [Tag.ANGULAR, Tag.TYPESCRIPT],
     },
     {
       id: 1,
-      name: 'Angular Project',
+      name: 'Angular Portfolio3D',
       summary: 'Sample Angular Project',
       description: 'description for the project',
       urlLink: 'some link ',
-      tags: [Tag.ANGULAR],
+      pictures: ['assets/Projects_Pictures/project1/img1.png', 'assets/Projects_Pictures/project1/img2.png'],
+      tags: [Tag.ANGULAR, Tag.TYPESCRIPT, Tag.THREE],
     },
     {
       id: 2,
-      name: 'Angular Project',
+      name: 'Unity game',
       summary: 'Sample Angular Project',
       description: 'description for the project',
       urlLink: 'some link ',
-      tags: [Tag.ANGULAR],
+      pictures: ['assets/Projects_Pictures/project1/img1.png', 'assets/Projects_Pictures/project1/img2.png'],
+      tags: [Tag.UNITY,Tag.CSHARP],
     }
   ];
   
@@ -47,5 +51,23 @@ export class ProjectsService {
     }
     return project;
   }
+  getProjectsByFilter(filterTags: Tag[]) {
+    let filteredProjects: Project[] = [];
 
+    this.projects.forEach(function (project) {
+      let foundAll=true;
+
+      filterTags.forEach(function (filterTag){
+        if(project.tags.includes(filterTag)===false){
+          foundAll=false;
+        }
+      });
+
+      if(foundAll){
+        filteredProjects.push(project);
+      }
+    });
+    
+    return filteredProjects;
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-resume',
@@ -9,7 +9,15 @@ import { Title } from '@angular/platform-browser';
 })
 export class ResumeComponent {
 
-  constructor(private titleService: Title) {
+  constructor(private titleService: Title,private renderer: Renderer2) {
     this.titleService.setTitle('Tarek Halloul - Resume');
+  }
+  downloadResume() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'assets/CV_Tarek_Halloul.pdf');
+    link.setAttribute('download', 'CV_Tarek_Halloul.pdf');
+    link.click();
+    link.remove();
   }
 }

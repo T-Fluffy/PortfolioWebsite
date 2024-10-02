@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Project } from '../models/Project';
 
 
@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
   imports: [ CommonModule,DialogModule, CarouselModule],
   templateUrl: './project-modal.component.html',
   styleUrl: './project-modal.component.css',
+  providers: []
 })
 export class ProjectModalComponent {
 [x: string]: any;
@@ -19,11 +20,7 @@ export class ProjectModalComponent {
   @Input()
   visible!: boolean;
   @Output() visibleChange = new EventEmitter<boolean>();
-  slides = [
-    { id: 1, content: 'assets/Projects_Pictures/project1/img1.png' },
-    { id: 2, content: 'assets/Projects_Pictures/project1/img2.png' }
-  ];
-
+ 
   constructor( ) {}
 
   toggleVisible() {

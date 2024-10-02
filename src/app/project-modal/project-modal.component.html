@@ -4,15 +4,22 @@
         [modal]="true" 
         [(visible)]="visible" 
         (onHide)="toggleVisible()"
-        [style]="{ width: '50rem'}" 
+        [style]="{ 
+            width: '50rem'
+        }"
         [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" 
         [maximizable]="true">
         <carousel>
-            <slide *ngFor="let slide of slides">
-                <img src="{{slide.content}}" class="imgDisplay" width="650px" height="600px">
+            <slide *ngFor="let slide of project.pictures">
+                <img src="{{slide}}" class="imgDisplay" width="700px" height="700px">
             </slide>
         </carousel>
-        <br>
+        <h3 class="mt-2">Description</h3>
         <p>{{project.description}}</p>
+        <p>You can find this project on <a href={{project.urlLink}} target="_blank">here.</a></p>
+        <hr>
+        <div class="d-flex justify-content-center conf">
+            <img *ngFor="let tag of project.tags" type="image" src="{{tag}}" alt="" width="32" height="32">
+        </div>
     </p-dialog>
 </div>

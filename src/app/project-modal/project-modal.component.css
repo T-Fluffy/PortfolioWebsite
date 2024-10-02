@@ -1,4 +1,10 @@
+
 .imgDisplay{
     display: block;
     width: 100%;
+}
+
+.conf{
+    margin: 5px;
+    display: inline-block;
 }
