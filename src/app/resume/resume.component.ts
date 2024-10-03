@@ -1,9 +1,10 @@
 import { Component, Renderer2 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { AccordionModule } from 'primeng/accordion';
 @Component({
   selector: 'app-resume',
   standalone: true,
-  imports: [],
+  imports: [AccordionModule],
   templateUrl: './resume.component.html',
   styleUrl: './resume.component.css'
 })

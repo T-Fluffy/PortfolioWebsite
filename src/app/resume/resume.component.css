@@ -1,0 +1,17 @@
+.education-conf{
+    text-align: left;
+}
+.skill-conf{
+    text-align: left;
+    display: flex;
+}
+.space-li{
+    padding-left: 25px;
+}
+.row.skill-conf {
+    display: flex;
+}
+
+.row.skill-conf > div {
+    flex: 1;
+}

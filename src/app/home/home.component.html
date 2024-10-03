@@ -5,6 +5,7 @@
             <div class="text-center">
                 <h2>About Me</h2>
             <img src="assets/th.jpg" alt="Profile Picture" width="256" height="280" class="rounded-circle">
+            <hr>
             <p>
                 Hi, I'm Tarek. I'm a Software Engineer and Game Developer.
                 I'm passionate about web and Game development.
@@ -19,7 +20,7 @@
             </div>
             <carousel>
                 <slide *ngFor="let slide of featuredProjects.pictures">
-                    <img src="{{slide}}" class="imgDisplay" width="550px" height="400px">
+                    <img src="{{slide}}" class="imgDisplay" width="400px" height="400px">
                 </slide>
             </carousel>
             <p class="mt-2">{{featuredProjects.summary}}</p>
