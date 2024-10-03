@@ -8,4 +8,5 @@ export interface Project{
     urlLink: string;
     pictures: string[];
     tags: Tag[];
+    underDev:boolean;
 }

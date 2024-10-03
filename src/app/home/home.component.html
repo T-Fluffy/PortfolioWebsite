@@ -20,11 +20,12 @@
             </div>
             <carousel>
                 <slide *ngFor="let slide of featuredProjects.pictures">
-                    <img src="{{slide}}" class="imgDisplay" width="400px" height="400px">
+                    <img  *ngIf="!slide.endsWith('.svg')" src="{{slide}}" class="imgDisplay" width="600px" height="450px">
+                    <img  *ngIf="slide.endsWith('.svg')" src="{{slide}}" type="image/svg+xml" width="400px" height="300px">
                 </slide>
             </carousel>
             <p class="mt-2">{{featuredProjects.summary}}</p>
-            <p>Check the portfolio section to learn more !</p>
+            <p *ngIf="!featuredProjects.underDev">Check the portfolio section to learn more !</p>
         </div>
     </div>
 </div>

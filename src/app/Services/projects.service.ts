@@ -17,6 +17,7 @@ export class ProjectsService {
       urlLink: 'some link ',
       pictures: ['assets/Projects_Pictures/project1/img1.png', 'assets/Projects_Pictures/project1/img2.png'],
       tags: [Tag.ANGULAR, Tag.TYPESCRIPT],
+      underDev: false
     },
     {
       id: 1,
@@ -26,6 +27,7 @@ export class ProjectsService {
       urlLink: 'some link ',
       pictures: ['assets/Projects_Pictures/project1/img1.png', 'assets/Projects_Pictures/project1/img2.png'],
       tags: [Tag.ANGULAR, Tag.TYPESCRIPT, Tag.THREE],
+      underDev: false
     },
     {
       id: 2,
@@ -35,6 +37,17 @@ export class ProjectsService {
       urlLink: 'some link ',
       pictures: ['assets/Projects_Pictures/project1/img1.png', 'assets/Projects_Pictures/project1/img2.png'],
       tags: [Tag.UNITY,Tag.CSHARP],
+      underDev: false
+    },
+    {
+      id: 3,
+      name: 'Project under development',
+      summary: 'Project under development',
+      description: 'Project under development',
+      urlLink: 'some link ',
+      pictures: ['assets/svgs/underDev.svg'],
+      tags: [],
+      underDev: true
     }
   ];
   
